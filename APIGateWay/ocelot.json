@@ -1,0 +1,65 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1/customer",
+      "DownstreamScheme": "http",
+      "ServiceName": "customerService",
+      "UpstreamPathTemplate": "/v1/customer",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "ReRoutesCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1/customer/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "customerService",
+      "UpstreamPathTemplate": "/v1/customer/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "ReRoutesCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v2/customer",
+      "DownstreamScheme": "http",
+      "ServiceName": "customerService",
+      "UpstreamPathTemplate": "/v2/customer",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "ReRoutesCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v2/customer/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "customerService",
+      "UpstreamPathTemplate": "/v2/customer/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "ReRoutesCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1/quote",
+      "DownstreamScheme": "http",
+      "ServiceName": "customerService",
+      "UpstreamPathTemplate": "/v1/quote",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "ReRoutesCaseSensitive": false
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1/quote/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "customerService",
+      "UpstreamPathTemplate": "/v1/quote/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "ReRoutesCaseSensitive": false
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}
